@@ -15,6 +15,7 @@
 
 		<app.runtime>4.5.3</app.runtime>
 		<mule.maven.plugin.version>4.0.0</mule.maven.plugin.version>
+		<munit.version>3.0.0</munit.version>
 	</properties>
 
 	<build>
@@ -37,19 +38,41 @@
 						</sharedLibrary>
 					</sharedLibraries>
 					<cloudHubDeployment>
-      <uri>https://anypoint.mulesoft.com</uri>
-      <muleVersion>4.6.2</muleVersion>
-      <username>Rajunaidutest02</username>
-      <password>Raju@725926</password>
-      <applicationName>banking-appication</applicationName>
-      <environment>QA</environment>
-      <region>us-east-1</region>
-      <workers>1</workers>
-      <workerType>MICRO</workerType>
-      <properties>
-        <http.port>8081</http.port>
-      </properties>
-    </cloudHubDeployment>
+						<uri>https://anypoint.mulesoft.com</uri>
+						<muleVersion>4.6.2</muleVersion>
+						<username>Rajunaidutest02</username>
+						<password>Raju@725926</password>
+						<applicationName>banking-appication</applicationName>
+						<environment>QA</environment>
+						<region>us-east-1</region>
+						<workers>1</workers>
+						<workerType>MICRO</workerType>
+						<properties>
+							<http.port>8081</http.port>
+						</properties>
+					</cloudHubDeployment>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>com.mulesoft.munit.tools</groupId>
+				<artifactId>munit-maven-plugin</artifactId>
+				<version>${munit.version}</version>
+				<executions>
+					<execution>
+						<id>test</id>
+						<phase>test</phase>
+						<goals>
+							<goal>test</goal>
+						</goals>
+					</execution>
+				</executions>
+				<configuration>
+					<coverage>
+						<runCoverage>true</runCoverage>
+						<formats>
+							<format>html</format>
+						</formats>
+					</coverage>
 				</configuration>
 			</plugin>
 		</plugins>
@@ -80,7 +103,7 @@
 			<version>1.14.7</version>
 			<classifier>mule-plugin</classifier>
 		</dependency>
-		
+
 		<dependency>
 			<groupId>com.mulesoft.connectors</groupId>
 			<artifactId>mule4-snowflake-connector</artifactId>
@@ -97,6 +120,26 @@
 			<artifactId>mule-email-connector</artifactId>
 			<version>1.7.2</version>
 			<classifier>mule-plugin</classifier>
+		</dependency>
+		<dependency>
+			<groupId>com.mulesoft.munit</groupId>
+			<artifactId>munit-runner</artifactId>
+			<version>3.0.0</version>
+			<classifier>mule-plugin</classifier>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>com.mulesoft.munit</groupId>
+			<artifactId>munit-tools</artifactId>
+			<version>3.0.0</version>
+			<classifier>mule-plugin</classifier>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.mule.weave</groupId>
+			<artifactId>assertions</artifactId>
+			<version>1.2.1</version>
+			<scope>test</scope>
 		</dependency>
 	</dependencies>
 
