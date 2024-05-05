@@ -32,10 +32,6 @@
 				<configuration>
 					<sharedLibraries>
 						<sharedLibrary>
-							<groupId>com.mycompany</groupId>
-							<artifactId>ojdbc6</artifactId>
-						</sharedLibrary>
-						<sharedLibrary>
 							<groupId>net.snowflake</groupId>
 							<artifactId>snowflake-jdbc</artifactId>
 						</sharedLibrary>
@@ -84,11 +80,7 @@
 			<version>1.14.7</version>
 			<classifier>mule-plugin</classifier>
 		</dependency>
-		<dependency>
-			<groupId>com.mycompany</groupId>
-			<artifactId>ojdbc6</artifactId>
-			<version>0.1</version>
-		</dependency>
+		
 		<dependency>
 			<groupId>com.mulesoft.connectors</groupId>
 			<artifactId>mule4-snowflake-connector</artifactId>
