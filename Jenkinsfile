@@ -5,7 +5,7 @@ pipeline {
   
 stage('Deployment') {
   steps {
-  bat 'mvn -U -V -e -B -gs %M2SETTINGS% -DskipTests deploy -DmuleDeploy'
+  bat 'mvn -U -V -e -B  clean deploy -DmuleDeploy'
   }
   }
   
