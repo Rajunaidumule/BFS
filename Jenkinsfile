@@ -18,8 +18,7 @@ stage('Deployment') {
   APP_NAME = '<SBX-API-NAME>'
   }
   steps {
-  bat 'mvn -U -V -e -B -gs %M2SETTINGS% -DskipTests deploy
--DmuleDeploy'
+  bat 'mvn -U -V -e -B -gs %M2SETTINGS% -DskipTests deploy -DmuleDeploy'
   }
   }
   
